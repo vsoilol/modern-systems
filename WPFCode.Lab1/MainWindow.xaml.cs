@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace WPFCode.Lab1
 {
@@ -8,6 +10,8 @@ namespace WPFCode.Lab1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly Random random = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +34,19 @@ namespace WPFCode.Lab1
 
         private async void OpenNewWindow_Click(object sender, RoutedEventArgs e)
         {
-            await ShowWindowWithDelay(new Gradient());
+            // Get the current margin
+            Thickness currentMargin = Btn1.Margin;
+
+            // Set random X and Y values within the window's bounds
+            double maxX = ActualWidth - Btn1.ActualWidth;
+            double maxY = ActualHeight - Btn1.ActualHeight;
+            double newX = random.NextDouble() * maxX;
+            double newY = random.NextDouble() * maxY;
+
+            // Update the button's margin with the new values
+            Btn1.Margin = new Thickness(newX, newY, 0, 0);
+
+            //await ShowWindowWithDelay(new Gradient(), 50);
         }
     }
 }
