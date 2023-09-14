@@ -1,0 +1,38 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCode.Lab3.Task1"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        x:Class="WPFCode.Lab3.Task1.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="Опции">
+                <MenuItem x:Name="ChangeBackgroundColorMenuItem" Header="Изменить цвет фона" Click="ChangeBackgroundColor_Click" />
+                <MenuItem x:Name="AboutDeveloperMenuItem" Header="Информация о разработчике" Click="AboutDeveloper_Click" />
+                <Separator />
+                <MenuItem x:Name="ExitMenuItem" Header="Закрыть" Click="Exit_Click" />
+            </MenuItem>
+        </Menu>
+
+        <ToolBar VerticalAlignment="Top" Grid.Row="1">
+            <Button x:Name="ChangeBackgroundColorButton" Content="Изменить цвет" Click="ChangeBackgroundColor_Click" />
+            <Button x:Name="AboutDeveloperButton" Content="О разработчике" Click="AboutDeveloper_Click" />
+            <Separator />
+            <Button x:Name="ExitButton" Content="Закрыть" Click="Exit_Click"/>
+        </ToolBar>
+
+        <StatusBar Grid.Row="2">
+            <TextBlock x:Name="statusBarText"/>
+        </StatusBar>
+    </Grid>
+</Window>
