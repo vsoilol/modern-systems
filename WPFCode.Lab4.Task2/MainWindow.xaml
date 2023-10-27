@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel>
             <TextBox x:Name="t1" Margin="0,0,0,10" Text="TextBox1"/>
-            <TextBox x:Name="t2" Text="{Binding ElementName=t1, Path=Text, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+            <TextBox x:Name="t2" Text="{Binding ElementName=t1, Path=Text}" Margin="0,0,0,10"/>
             <Slider x:Name="slider1" Margin="0,0,0,10"/>
             <Slider x:Name="slider2" Value="{Binding ElementName=slider1, Path=Value}" />
         </StackPanel>
